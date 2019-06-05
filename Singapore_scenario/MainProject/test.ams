@@ -1,0 +1,152 @@
+## ams_version=1.0
+
+Model Main_test {
+    Variable Bigterm {
+        Range: free;
+        Definition: ((lambda_s*h+1)*theta-(t-di_1_s-Hs))/(1+(lambda_s*h+1)**2);
+    }
+    Variable h {
+        Range: free;
+        Definition: (1+tb*lambda_s)*tb;
+    }
+    Variable theta {
+        Range: free;
+        Definition: a_n_plus_1s+beta_n_1*ta+(beta_n_1*ta*lambda_s+(a_n_plus_1s-t)*lambda_s)*k*tb-t-Hs;
+    }
+    Variable k {
+        Range: free;
+        Definition: 1+tb*lambda_s;
+    }
+    Parameter zeta {
+        Definition: 300;
+    }
+    Parameter M_2 {
+        Definition: 100000000000;
+    }
+    Variable n_v_1 {
+        Range: free;
+        Definition: phi_n+x*lambda_s-c_n;
+    }
+    Variable n_analytic_v_1 {
+        Range: free;
+        Definition: phi_n+x_analytic_solution*lambda_s-c_n;
+    }
+    Variable n_v_2 {
+        Range: free;
+        Definition: l_n_1-beta_n_1-c_n_plus_1+(beta_n_1*ta*lambda_s+v_1+(a_n_plus_1s-t-x)*lambda_s)*k;
+    }
+    Variable n_analytic_v_2 {
+        Range: free;
+        Definition: l_n_1-beta_n_1-c_n_plus_1+(beta_n_1*ta*lambda_s+max(0,n_analytic_v_1)+(a_n_plus_1s-t-x_analytic_solution)*lambda_s)*k;
+    }
+    MathematicalProgram mathematicalprogram {
+        Objective: f;
+        Direction: minimize;
+        Constraints: AllConstraints;
+        Variables: AllVariables;
+        Type: Automatic;
+    }
+    Parameter M_1 {
+        Definition: 100000000000000;
+    }
+    Variable f {
+        Range: free;
+        Definition: (t+x-di_1_s-Hs)**2+(a_n_plus_1s+beta_n_1*ta+(beta_n_1*ta*lambda_s+v_1+(a_n_plus_1s-t-x)*lambda_s)*(1+tb*lambda_s)*tb-v_2*tb-t-x-Hs)**2+M_1*v_1+M_2*v_2+0*(n_v_1+n_v_2);
+    }
+    Constraint c_4 {
+        Definition: v_2>=l_n_1-beta_n_1-c_n_plus_1+(beta_n_1*ta*lambda_s+v_1+(a_n_plus_1s-t-x)*lambda_s)*(1+tb*lambda_s);
+    }
+    Constraint c_3 {
+        Definition: v_2>=0;
+    }
+    Variable x {
+        Range: free;
+    }
+    Variable x_analytic_solution {
+        Range: free;
+        Definition: max(0,min(zeta,(c_n-phi_n)/lambda_s,((lambda_s*h+1)*theta-(t-di_1_s-Hs))/(1+(lambda_s*h+1)**2)));
+    }
+    Constraint c_2 {
+        Definition: v_1>=phi_n+x*lambda_s-c_n;
+    }
+    Constraint c_1 {
+        Definition: v_1>=0;
+    }
+    Variable v_2 {
+        Range: free;
+    }
+    Variable v_1 {
+        Range: free;
+    }
+    Parameter a_n_plus_1s {
+        Definition: 2500;
+    }
+    Parameter tb {
+        Definition: 4;
+    }
+    Parameter ta {
+        Definition: 1.5;
+    }
+    Parameter l_n_1 {
+        Definition: 50;
+    }
+    Parameter beta_n_1 {
+        Definition: 10;
+    }
+    Parameter c_n_plus_1 {
+        Definition: 60;
+    }
+    Parameter c_n {
+        Definition: 60;
+    }
+    Parameter lambda_s {
+        Definition: 0.002;
+    }
+    Parameter Hs {
+        Definition: 600;
+    }
+    Parameter phi_n {
+        Definition: 40;
+    }
+    Parameter t {
+        Definition: 1500;
+    }
+    Parameter di_1_s {
+        Definition: 1000;
+    }
+    Procedure MainInitialization {
+        Comment: "Add initialization statements here that do NOT require any library being initialized already.";
+    }
+    Procedure PostMainInitialization {
+        Comment: {
+            "Add initialization statements here that require that the libraries are already initialized properly,
+            or add statements that require the Data Management module to be initialized."
+        }
+    }
+    Procedure MainExecution {
+        Body: {
+            solve mathematicalprogram;
+        }
+    }
+    Procedure PreMainTermination {
+        Body: {
+            return DataManagementExit();
+        }
+        Comment: {
+            "Add termination statements here that require all libraries to be still alive.
+            Return 1 if you allow the termination sequence to continue.
+            Return 0 if you want to cancel the termination sequence."
+        }
+    }
+    Procedure MainTermination {
+        Body: {
+            return 1;
+        }
+        Comment: {
+            "Add termination statements here that do not require all libraries to be still alive.
+            Return 1 to allow the termination sequence to continue.
+            Return 0 if you want to cancel the termination sequence.
+            It is recommended to only use the procedure PreMainTermination to cancel the termination sequence and let this procedure always return 1."
+        }
+    }
+}

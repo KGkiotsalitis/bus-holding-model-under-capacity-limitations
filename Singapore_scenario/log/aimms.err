@@ -1,0 +1,37 @@
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 3.
+The user function library \x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 3.
+The library \x64\AimmsPROClient.dll has not been loaded because: Error loading library : The parameter is incorrect.
+Execution error at line 2 in user-defined function section "webui::PROIsInitialized".
+The dll for external procedure "pro::management::IsInitialized" has not been found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 3.
+The user function library \x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 3.
+The library \x64\AimmsPROClient.dll has not been loaded because: Error loading library : The parameter is incorrect.
+Execution error at line 2 in user-defined function section "webui::PROIsInitialized".
+The dll for external procedure "pro::management::IsInitialized" has not been found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The user function library \x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The library \x64\AimmsPROClient.dll has not been loaded because: Error loading library : The parameter is incorrect.
+Execution error at line 2 in user-defined function section "webui::PROIsInitialized".
+The dll for external procedure "pro::management::IsInitialized" has not been found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The user function library \x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The library \x64\AimmsPROClient.dll has not been loaded because: Error loading library : The parameter is incorrect.
+Execution error at line 2 in user-defined function section "webui::PROIsInitialized".
+The dll for external procedure "pro::management::IsInitialized" has not been found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The user function library \x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The library \x64\AimmsPROClient.dll has not been loaded because: Error loading library : The parameter is incorrect.
+Execution error at line 2 in user-defined function section "webui::PROIsInitialized".
+The dll for external procedure "pro::management::IsInitialized" has not been found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The user function library \x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 2 in user-defined function section "webui::PROIsInitialized", column 62.
+The library \x64\AimmsPROClient.dll has not been loaded because: Error loading library : The parameter is incorrect.
+Execution error at line 2 in user-defined function section "webui::PROIsInitialized".
+The dll for external procedure "pro::management::IsInitialized" has not been found.
+A DataChangeMonitor with ID DataChangeMonitor001 does not exist.
