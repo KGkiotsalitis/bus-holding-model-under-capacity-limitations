@@ -20,4 +20,4 @@ MIT License
 
 Note that the script `comparison_with_benchmark.py` is written in Python. Running or modifying this script requires an installed version of **Python 3.6**. 
 
-Note that the mathematical program of the bus holding problem under capacity limitations `singapore_scenario.aimms` is written in AIMMS that uses CPLEX. Running or modifying this script requires an installed version of **AIMMS**. A free academic license in available at: apmonitor.com/
+Note that the mathematical program of the bus holding problem under capacity limitations `singapore_scenario.aimms` is written in AIMMS that uses CPLEX. Running or modifying this script requires an installed version of **AIMMS**. A free academic license in available at: https://aimms.com/english/developers/licensing/free-licenses/aimmsacademiclicense/
