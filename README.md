@@ -1,4 +1,4 @@
-# bus-holding-model-under-capacity-limitations
+# An analytic solution for real-time bus holding subject to vehicle capacity limits
 
 This repository is meant for publishing some of the code related to the **real time bus holding problem under capacity limitations** applied in public transit (in particular, **bus services**).
 
